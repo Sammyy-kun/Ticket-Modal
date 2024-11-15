@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .modal-dialog {
+            max-width: 600px;
+        }
+        .modal-content {
+            display: flex;
+            flex-direction: row;
+            background-color: #f4f5f7;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+       
+        .ticket-info-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            border-right: 2px dashed #ccc;
+        }
+        .ticket-header {
+            color: black;
+            padding-bottom: 10px;
+            text-align: left;
+            font-size: 1.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #333;
+            margin-bottom: 15px;
+        }
+        .ticket-details div {
+            margin: 8px 0;
+        }
+        .ticket-details .label {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .ticket-details .value {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .ticket-qr-section {
+            width: 180px;
+            background-color:#6256CA;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .ticket-qr-section img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .scan-text {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        @media (max-width: 575.98px) {
+            .modal-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .ticket-info-section {
+                border-right: none;
+                border-bottom: 2px dashed #ccc;
+                width: 100%;
+            }
+            .ticket-qr-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ticketModal">
+    Generate Ticket
+</button>
+
+<div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="ticket-info-section">
+                <div class="ticket-header">Ticket</div>
+                <div class="ticket-details">
+                    <div>
+                        <span class="label">Name:</span> <span class="value">John Doe</span>
+                    </div>
+                    <div>
+                        <span class="label">Event:</span> <span class="value">Concert Night</span>
+                    </div>
+                    <div>
+                        <span class="label">Date:</span> <span class="value">20 Nov 2023</span>
+                    </div>
+                    <div>
+                        <span class="label">Time:</span> <span class="value">08:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            <!-- QR Code -->
+            <div class="ticket-qr-section">
+                <img src="https://via.placeholder.com/100" alt="QR Code"> 
+                <div class="scan-text">SCAN ME</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
